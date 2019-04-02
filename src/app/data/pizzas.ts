@@ -1,56 +1,17 @@
+import { Pizza } from "./../class/pizza"
+
 export const pizzas = [
-  { 
-    nom: "Vegetariana", 
-    prix: 12, 
-    ingredients: ["tomate", "courgette"], 
-    image: "vegetariana.jpeg" 
-  }, 
-  { 
-    nom: "Diavolo", 
-    prix: 13, 
-    ingredients: ["tomate", "chorizo"], 
-    image: "diavolo.jpeg"  
-  },
-  { 
-    nom: "Parmeggiano", 
-    prix: 9, 
-    ingredients: ["tomate", "parmesan"], 
-    image: "parmegiano.jpeg" 
-  }, 
-  { 
-      nom: "4 fromages", 
-    prix: 14, 
-    ingredients: ["crème", "gorgonzola"], 
-    image: "4f.jpeg"  
-  },   
-  { 
-    nom: "Poulet", 
-    prix: 13, 
-    ingredients: ["tomate", "courgette"], 
-    image: "poulet.jpeg" 
-  },
-   { 
-    nom: "fruit", 
-    prix: 25, 
-    ingredients: ["tomate", "courgette","fruit"], 
-    image: "poulet.jpeg" 
-  },
-   { 
-      nom: "4 fromages", 
-    prix: 14, 
-    ingredients: ["crème", "gorgonzola"], 
-    image: "4f.jpeg"  
-  },   
-  { 
-    nom: "Poulet", 
-    prix: 13, 
-    ingredients: ["tomate", "courgette"], 
-    image: "poulet.jpeg" 
-  },
-   { 
-    nom: "fruit", 
-    prix: 25, 
-    ingredients: ["tomate", "courgette","fruit"], 
-    image: "poulet.jpeg" 
-  }
+  new Pizza('marocaine',['tomate','tajine'],'poulet',25),
+   new Pizza('Vegetariana',['tomate','courgette'],'vegetariana',15),
+    new Pizza('Diavolo',['tomate','chorizo'],'diavolo',18),
+     new Pizza('Parmeggiano',['tomate','parmesan'],'parmegiano',20),
+      new Pizza('4 fromages',["crème", "gorgonzola"],'4f',21),
+      new Pizza('fruit',["tomate", "courgette","fruit"],'poulet'),
+         new Pizza('marocaine',['tomate','tajine'],'poulet',25),
+   new Pizza('Vegetariana',['tomate','courgette'],'vegetariana',15),
+    new Pizza('Diavolo',['tomate','chorizo'],'diavolo',18),
+     new Pizza('Parmeggiano',['tomate','parmesan'],'parmegiano',20),
+      new Pizza('4 fromages',["crème", "gorgonzola"],'4f',21),
+      new Pizza('fruit',["tomate", "courgette","fruit"],'poulet'),
+ 
 ];

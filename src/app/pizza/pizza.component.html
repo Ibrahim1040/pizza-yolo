@@ -1,4 +1,4 @@
-<img src="/assets/images/{{ item.image }}" class="card-img-top" />
+<img src="{{ item.getImage() }}" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">{{ item.nom }} - {{ item.prix | currency: "EUR" }}</h5>
             <p class="card-text">
