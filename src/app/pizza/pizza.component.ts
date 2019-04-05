@@ -13,8 +13,6 @@ export class PizzaComponent {
 
 	 constructor(public pizzaService: PizzaService){}
 
-	  ajouterAuPanier (pizza) {
-    this.pizzaService.panier.push(pizza);
-  }
+
 
 }

@@ -19,22 +19,13 @@ export class AppComponent {
   
   
 //Ceci est une propriete qui demande un calcul avant
-  get total () {
-    let total = 0;
-    for(let i = 0; i < this.pizzaService.panier.length; i++) {
-      total += this.pizzaService.panier[i].prix;
-    }
-    return total;
-    // return this.panier.reduce((acc, cur) => acc + cur.prix, 0);
-  }
+ 
 
   // méthodes
   voirMenu () {
     this.menuVisible = true;
   }
   // splice permet de supprimer un item à un index en particulier
-  supprimerItem(index) {
-    this.pizzaService.panier.splice(index, 1)
-  }
+
 
 }

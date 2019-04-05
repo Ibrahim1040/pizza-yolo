@@ -1,9 +1,11 @@
 export class Pizza {
 	//proprietes
 	prix = 10;
+	nb = 0;
+	
 
 	//constructeur
-	constructor(public nom, public ingredients, public image, prix?){
+	constructor(public id, public nom, public ingredients, public image, prix?){
 		if(prix){
 			this.prix = prix;
 		}
