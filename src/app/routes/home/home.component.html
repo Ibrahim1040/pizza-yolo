@@ -1,0 +1,35 @@
+{{ totalPizza |async}}
+<button *ngIf="menuVisible === false" class="btn btn-secondary" type="button" (click)="voirMenu()">
+  Voir le menu
+</button>
+
+<div *ngIf="menuVisible === true" class="card-columns">
+  <div *ngFor="let item of menuComplet" class="card" style="width: 18rem;">
+    <app-pizza [item]="item"></app-pizza>
+  </div>
+</div>
+<footer>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let item of pizzaService.panier;">
+      <div [style.width.px]="'200'">
+        {{ item.nom }} - {{ item.prix | currency: "EUR"}}
+      </div>
+      <div>
+        nombre :
+
+        <button class="btn btn-sm btn-success mx-2" (click)="pizzaService.supprimerDuPanier(item)">-</button>
+        {{ item?.nb }}
+        <button class="btn btn-sm btn-success mx-2" (click)="pizzaService.ajouterAuPanier(item)">+</button>
+        <button class="btn btn-sm btn-danger" (click)="pizzaService.supprimerTout(item)">
+          x
+        </button>
+      </div>
+    </li>
+    <li class="list-group-item list-group-item-info">
+      <strong>Total: {{ pizzaService.total | currency:"EUR"}} </strong>
+    </li>
+  </ul>
+  <button class="btn btn-primary float-right mt-4" [disabled]="pizzaService.panier.length === 0" routerLink="/detail">
+    Voir détail commande
+  </button>
+</footer>

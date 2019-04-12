@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { pizzas } from "./data/pizzas";
 import { PizzaService} from './pizza.service';
+import { HttpClient } from '@angular/common/http';
+import { map, delay,tap } from "rxjs/operators";
 
 
 @Component({
@@ -8,24 +10,18 @@ import { PizzaService} from './pizza.service';
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  // propriétés
-	titre = 'Pizza YOLO';
-  menuComplet = pizzas;
-  menuVisible = true;
-  nom = "";
+export class AppComponent implements OnInit {
+	// proprietes
+	pizzas ;
+	//constructeur
+	constructor(public httpClient: HttpClient){}
 
-  constructor(public pizzaService : PizzaService){}
-  
-  
-//Ceci est une propriete qui demande un calcul avant
- 
-
-  // méthodes
-  voirMenu () {
-    this.menuVisible = true;
-  }
-  // splice permet de supprimer un item à un index en particulier
-
-
+	//methodes
+	ngOnInit(){
+		this.pizzas = this.httpClient
+				.get('/assets/pizza.json')
+			
+				
+	}
+				
 }
